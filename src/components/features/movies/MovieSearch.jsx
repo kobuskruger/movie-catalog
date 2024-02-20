@@ -34,11 +34,11 @@ function MovieSearch({ search }) {
     return <div>Error: {error.message}</div>;
   }
 
-  if (data?.results?.length === 0 && search) {
+  const movies = data.pages.flatMap((page) => page.results);
+
+  if (movies && movies?.length === 0 && search) {
     return <div>No movies found</div>;
   }
-
-  const movies = data.pages.flatMap((page) => page.results);
 
   return (
     <div className="flex flex-col gap-6">
