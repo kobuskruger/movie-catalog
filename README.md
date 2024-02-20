@@ -14,7 +14,7 @@ A live demo of the app is available at https://movie-catalog.kru.ge/.
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [TanStack/react-query](https://react-query.tanstack.com/) - Data fetching and caching library
 - [Axios](https://axios-http.com/) - HTTP client
-- [Cloudflare CDN](https://www.cloudflare.com/cdn/) - DNS, CDN, caching
+- [Cloudflare](https://www.cloudflare.com/) - DNS, CDN, caching
 - [AWS S3](https://aws.amazon.com/s3/) - Hosting
 
 ## Running the app
@@ -34,7 +34,7 @@ npm install
 npm run dev
 ```
 
-The app will be available at http://localhost:3000.
+The app will be available at http://localhost:5173.
 
 ## Building and deploying the app
 

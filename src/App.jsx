@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="flex min-h-screen flex-col bg-gray-200">
       <Navbar />
-      <div className="flex justify-center p-4">
+      <div className="flex w-full max-w-5xl self-center p-4">
         <Outlet />
       </div>
     </div>

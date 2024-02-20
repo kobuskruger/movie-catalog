@@ -16,7 +16,7 @@ function MovieSearchPage() {
   };
 
   return (
-    <div className="flex w-full max-w-5xl flex-col gap-6">
+    <div className="flex w-full flex-col gap-6">
       <SearchBox
         placeholder={"Search for a movie"}
         setSearch={handleSetSearch}

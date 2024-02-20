@@ -5,6 +5,7 @@ import MovieGenreTagList from "../components/features/movies/MovieGenreTagList";
 import MovieFavoriteIcon from "../components/features/movies/MovieFavoriteIcon";
 import MovieMeta from "../components/features/movies/MovieMeta";
 import { IconMovie } from "@tabler/icons-react";
+import MoviePoster from "../components/features/movies/MoviePoster";
 
 function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -32,17 +33,7 @@ function MovieDetailsPage() {
       }}
       className="flex flex-shrink flex-grow flex-col flex-wrap gap-4 rounded-lg bg-white bg-opacity-95 bg-[image:var(--image-url)] bg-cover bg-no-repeat p-4 bg-blend-overlay sm:flex-row"
     >
-      {movie.poster_path ? (
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-          alt={movie.title}
-          className="max-h-64 max-w-max self-center rounded-lg sm:max-h-80 sm:max-w-56"
-        />
-      ) : (
-        <div className="flex h-64 max-h-64 w-56 max-w-full items-center justify-center self-center rounded-lg bg-gray-300 sm:max-h-80 sm:max-w-56">
-          <IconMovie size={48} />
-        </div>
-      )}
+      <MoviePoster title={movie.title} posterUrl={movie.poster_path} />
 
       <div className="flex flex-1 flex-col gap-2">
         <div className="flex flex-row justify-between gap-2">
