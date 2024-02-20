@@ -12,7 +12,7 @@ A live demo of the app is available at https://movie-catalog.kru.ge/.
 - [React](https://reactjs.org/) - Frontend library
 - [React Router](https://reactrouter.com/) - Routing library
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [TanStack/react-query](https://react-query.tanstack.com/) - Data fetching and caching library
+- [TanStack/react-query](https://tanstack.com/query/latest/) - Data fetching and caching library
 - [Axios](https://axios-http.com/) - HTTP client
 - [Cloudflare](https://www.cloudflare.com/) - DNS, CDN, caching
 - [AWS S3](https://aws.amazon.com/s3/) - Hosting
