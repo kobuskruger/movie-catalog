@@ -11,6 +11,11 @@ function MovieListItem({ movie }) {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
+  // Some api responses have `genre_ids` and some have `genres` array
+  if (movie.genre_ids === undefined) {
+    movie.genre_ids = movie.genres.map((genre) => genre.id);
+  }
+
   const handleButtonHover = () => {
     queryClient.prefetchQuery({
       queryKey: ["movies", "movie", movie.id],
