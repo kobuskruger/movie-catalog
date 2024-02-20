@@ -9,9 +9,15 @@ function MovieSearchPage() {
 
   const handleSetSearch = (q) => {
     if (q?.length > 0) {
-      setSearchParams({ q }, { replace: true });
+      setSearchParams((prev) => {
+        prev.set("q", q);
+        return prev;
+      });
     } else {
-      setSearchParams({}, { replace: true });
+      setSearchParams((prev) => {
+        prev.delete("q");
+        return prev;
+      });
     }
   };
 

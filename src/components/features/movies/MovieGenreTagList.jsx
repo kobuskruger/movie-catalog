@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OptionsContext } from "../../../stores/OptionsProvider";
+import { OptionsContext } from "../../../stores/OptionsContext";
 
 function MovieGenreTagList({ genreIds }) {
   const { genres } = useContext(OptionsContext);

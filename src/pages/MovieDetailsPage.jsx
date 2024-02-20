@@ -4,7 +4,6 @@ import { Movies } from "../api/apiAgent";
 import MovieGenreTagList from "../components/features/movies/MovieGenreTagList";
 import MovieFavoriteIcon from "../components/features/movies/MovieFavoriteIcon";
 import MovieMeta from "../components/features/movies/MovieMeta";
-import { IconMovie } from "@tabler/icons-react";
 import MoviePoster from "../components/features/movies/MoviePoster";
 
 function MovieDetailsPage() {

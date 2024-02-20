@@ -1,15 +1,25 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { Movies } from "../../../api/apiAgent";
 import MovieList from "./MovieList";
+import Button from "../../common/Button";
 
 function MovieSearch({ search }) {
-  const { data, status, error } = useQuery({
+  const {
+    data,
+    status,
+    error,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
     queryKey: ["movies", "search", search],
-    queryFn: () => Movies.search(search),
-    config: {
-      suspense: true,
+    queryFn: ({ pageParam }) => Movies.search(search, pageParam),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => {
+      if (lastPage.page < lastPage.total_pages) {
+        return lastPage.page + 1;
+      }
     },
-    enabled: !!search,
   });
 
   if (status === "idle" || !search) {
@@ -28,7 +38,24 @@ function MovieSearch({ search }) {
     return <div>No movies found</div>;
   }
 
-  return <MovieList movies={data.results} />;
+  const movies = data.pages.flatMap((page) => page.results);
+
+  return (
+    <div className="flex flex-col gap-6">
+      <MovieList movies={movies} />
+      {hasNextPage && (
+        <Button
+          onClick={() => fetchNextPage()}
+          disabled={!hasNextPage || status === "loading" || isFetchingNextPage}
+          className="self-center"
+        >
+          {isFetchingNextPage || status === "loading"
+            ? "Loading ..."
+            : "Load More"}
+        </Button>
+      )}
+    </div>
+  );
 }
 
 export default MovieSearch;

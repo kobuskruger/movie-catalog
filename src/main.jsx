@@ -10,7 +10,7 @@ import {
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { OptionsProvider } from "./stores/OptionsProvider";
+import { OptionsProvider } from "./stores/OptionsContext";
 import MovieSearchPage from "./pages/MovieSearchPage";
 import MovieFavouritesPage from "./pages/MovieFavouritesPage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";

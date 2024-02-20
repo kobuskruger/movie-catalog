@@ -13,12 +13,13 @@ const apiAgent = axios.create({
 });
 
 const requests = {
-  get: (url) => apiAgent.get(url).then((res) => res.data),
+  get: (...options) => apiAgent.get(...options).then((res) => res.data),
 };
 
 const Movies = {
   getMovie: (id) => requests.get(`movie/${id}`),
-  search: (query) => requests.get(`search/movie?query=${query}`),
+  search: (query, page) =>
+    requests.get(`search/movie?query=${query}&page=${page}`),
 };
 
 const Genres = {
